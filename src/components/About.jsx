@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import profileImg from "../assets/profile1.png";
+import resume from "../assets/Chaudhari_Rushikesh_ResumE.pdf";
+import { FaDownload } from "react-icons/fa";
 
 function About() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
@@ -23,16 +25,26 @@ function About() {
         <div className='flex flex-col md:flex-row items-center gap-16'>
 
           {/* IMAGE */}
-          <div className='md:w-1/2 flex justify-center'>
+          <motion.div 
+            className='md:w-1/2 flex justify-center'
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <img 
               src={profileImg} 
               alt="About Me"
-              className='w-72 h-80 object-cover object-top rounded-2xl shadow-2xl border-2 border-purple-500 hover:scale-105 transition duration-300'
+              className='w-72 h-80 object-cover object-top rounded-2xl shadow-2xl border-2 border-purple-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition duration-300'
             />
-          </div>
+          </motion.div>
 
           {/* TEXT */}
-          <div className='md:w-1/2 text-gray-300 text-center md:text-left'>
+          <motion.div 
+            className='md:w-1/2 text-gray-300 text-center md:text-left'
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
 
             <p className='mb-6 text-lg leading-relaxed'>
               I am a <span className='text-purple-400 font-semibold'>Full Stack Developer</span> with a strong foundation in both frontend and backend technologies.
@@ -56,7 +68,21 @@ function About() {
               </p>
             </div>
 
-          </div>
+            {/* 🔥 Resume Button */}
+            <div className="mt-8">
+              <a
+                href={resume}
+                target="_blank"
+                download
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium text-white 
+                hover:scale-105 hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition duration-300"
+              >
+                <FaDownload />
+                Download Resume
+              </a>
+            </div>
+
+          </motion.div>
 
         </div>
 
