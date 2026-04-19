@@ -2,9 +2,6 @@
 
 This is my personal portfolio website built using React.js and Tailwind CSS.
 
-## 🚀 Live Demo
-👉 (Add your live link here after deployment)
-
 ---
 
 ## 📌 Features
@@ -39,11 +36,6 @@ This is my personal portfolio website built using React.js and Tailwind CSS.
 
 ---
 
-## 📸 Screenshots
-
-(Add screenshots later if needed)
-
----
 
 ## 📬 Contact
 
