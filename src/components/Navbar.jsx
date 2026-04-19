@@ -14,7 +14,7 @@ export const Navbar = () => {
         <div>
           <a href="#" className='text-3xl font-bold text-white'>
             Rushiii
-            <span className='text-purple'>Chaudhari</span>
+            <span className='text-purple'>Portfolio</span>
           </a>
         </div>
 
@@ -24,7 +24,7 @@ export const Navbar = () => {
           {menuItems.map((item) => (
             <a
               key={item}
-              href={`#${item}`}
+              href={`#${item.toLowerCase()}`}
               className="relative group inline-block"
             >
               <span className="text-white group-hover:text-purple transition-colors duration-300">
@@ -55,16 +55,18 @@ export const Navbar = () => {
       {showMenu && (
         <div className="md:hidden mt-4 bg-dark-300 rounded-lg p-4 flex flex-col items-center space-y-4 justify-center">
           {menuItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              onClick={() => setShowMenu(false)}
-              className="relative group inline-block"
-            >
-              <span className="text-white group-hover:text-purple transition-colors duration-300">{item}</span>
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+  <a
+    key={item}
+    href={`#${item.toLowerCase()}`}   // 🔥 FIX HERE
+    onClick={() => setShowMenu(false)}
+    className="relative group inline-block"
+  >
+    <span className="text-white group-hover:text-purple transition-colors duration-300">
+      {item}
+    </span>
+    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple transition-all duration-300 group-hover:w-full"></span>
+  </a>
+))}
         </div>
       )}
     </nav>
